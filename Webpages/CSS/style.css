@@ -1,0 +1,914 @@
+/* =====================================
+   1. GENERAL SETTINGS
+===================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --background: #080d1b;
+    --secondary-bg: #0c1426;
+    --card-bg: #111e35;
+    --primary: #0ea5e9;
+    --accent: #38bdf8;
+    --white: #ffffff;
+    --text: #cbd5e1;
+    --border: #1e3a5f;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--background);
+    color: var(--white);
+    line-height: 1.7;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+.logo img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+ul {
+    list-style: none;
+}
+
+button,
+input,
+textarea {
+    font: inherit;
+}
+
+
+/* =====================================
+   2. NAVIGATION BAR
+===================================== */
+
+header {
+    background: linear-gradient(
+        120deg,
+        #367588,
+        #008080
+    );
+    padding: 18px 8%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid var(--border);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 27px;
+    font-weight: bold;
+    color: var(--accent);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.nav-links a {
+    font-size: 14px;
+    color: var(--text);
+    transition: 0.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--accent);
+}
+
+
+/* =====================================
+   3. HERO SECTION
+===================================== */
+
+.hero {
+    min-height: 85vh;
+    padding: 80px 10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+
+    background: linear-gradient(
+        120deg,
+        #101d36,
+        #080d1b
+    );
+}
+
+.hero-content {
+    max-width: 650px;
+}
+
+.hero-content > p:first-child {
+    color: var(--accent);
+    font-size: 15px;
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-size: 48px;
+    line-height: 1.2;
+    margin-bottom: 25px;
+}
+
+.hero-content > p {
+    color: var(--text);
+    font-size: 17px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.hero-buttons a,
+.hero-content > a {
+    display: inline-block;
+    padding: 12px 25px;
+    margin-top: 20px;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+.hero-buttons a:first-child,
+.hero-content > a:first-of-type {
+    background: var(--primary);
+    color: white;
+}
+
+.hero-buttons a:last-child,
+.hero-content > a:last-of-type {
+    border: 1px solid var(--accent);
+    color: var(--accent);
+}
+
+.hero-buttons a:hover,
+.hero-content > a:hover {
+    transform: translateY(-4px);
+}
+
+.hero-image img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid var(--accent);
+}
+
+
+/* =====================================
+   4. GENERAL PAGE HEADERS
+===================================== */
+
+.page-header {
+    padding: 100px 10%;
+    text-align: center;
+
+    background: linear-gradient(
+        120deg,
+        #101d36,
+        #080d1b
+    );
+}
+
+.page-header h1 {
+    font-size: 45px;
+    margin-bottom: 15px;
+}
+
+.page-header h2 {
+    font-size: 25px;
+    color: var(--accent);
+    margin-bottom: 20px;
+}
+
+.page-header p {
+    max-width: 750px;
+    margin: auto;
+    color: var(--text);
+}
+
+
+/* =====================================
+   5. GENERAL SECTION SETTINGS
+===================================== */
+
+section:not(.hero):not(.page-header) {
+    padding: 80px 10%;
+}
+
+section h2 {
+    font-size: 32px;
+    margin-bottom: 25px;
+}
+
+section p {
+    color: var(--text);
+}
+
+section h3 {
+    color: var(--accent);
+}
+
+
+/* =====================================
+   6. HOME PAGE
+===================================== */
+
+.about-preview {
+    text-align: center;
+    background: var(--secondary-bg);
+}
+
+.about-preview p {
+    max-width: 850px;
+    margin: auto;
+}
+
+.mission-vision {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.mission,
+.vision {
+    background: var(--card-bg);
+    padding: 35px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+}
+
+.mission h2,
+.vision h2 {
+    color: var(--accent);
+}
+
+.core-values {
+    background: var(--secondary-bg);
+    text-align: center;
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.values-grid div {
+    background: var(--card-bg);
+    padding: 25px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.values-grid div:hover {
+    transform: translateY(-7px);
+    border: 1px solid var(--accent);
+}
+
+
+/* =====================================
+   7. ABOUT PAGE
+===================================== */
+
+.about-profile {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    align-items: center;
+    gap: 50px;
+}
+
+.about-profile img {
+    width: 100%;
+    max-height: 450px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.about-profile p {
+    margin-bottom: 15px;
+}
+
+.professional-background,
+.philosophy {
+    text-align: center;
+}
+
+.professional-background p,
+.philosophy p,
+.who-i-work-with p {
+    max-width: 850px;
+    margin: auto;
+}
+
+.prof{
+    margin: auto;
+}
+
+.prof h2{
+    text-align: center;
+}
+
+.who-i-work-with {
+    text-align: center;
+    background: var(--secondary-bg);
+}
+
+
+/* =====================================
+   8. MATECH PAGE
+===================================== */
+
+.matech-about {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 40px;
+}
+
+.matech-about img {
+    width: 100%;
+    border-radius: 12px;
+}
+
+.matech-about p {
+    margin-top: 15px;
+}
+
+.matech-goal {
+    text-align: center;
+    background: var(--secondary-bg);
+}
+
+.matech-goal p {
+    max-width: 800px;
+    margin: auto;
+}
+
+.matech-services {
+    text-align: center;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.services-grid div {
+    padding: 25px;
+    background: var(--card-bg);
+    border-radius: 10px;
+    border-bottom: 3px solid var(--primary);
+    transition: 0.3s;
+}
+
+.services-grid div:hover {
+    transform: translateY(-6px);
+}
+
+
+/* =====================================
+   9. SKILLS PAGE
+===================================== */
+
+.skill-category {
+    margin: 30px 10%;
+    padding: 30px;
+    background: var(--card-bg);
+    border-radius: 12px;
+    transition: 0.3s;
+}
+
+.skill-category h2 {
+    color: var(--accent);
+}
+
+
+/* =====================================
+   10. SERVICES PAGE
+===================================== */
+
+.service-category {
+    margin: 25px 10%;
+    padding: 30px;
+    background: var(--card-bg);
+    border-radius: 12px;
+    transition: 0.3s;
+}
+
+.service-category:hover {
+    transform: translateX(7px);
+    border-left: 4px solid var(--accent);
+}
+
+.service-category h2 {
+    color: var(--accent);
+}
+
+.service-contact {
+    text-align: center;
+    background: var(--secondary-bg);
+}
+
+.service-contact a {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 30px;
+    background: var(--primary);
+    border-radius: 6px;
+}
+
+
+/* =====================================
+   11. PROJECTS PAGE
+===================================== */
+
+.project-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.project-card {
+    padding: 35px;
+    background: var(--card-bg);
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    transition: 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-7px);
+    border-color: var(--accent);
+}
+
+.project-card h2 {
+    color: var(--accent);
+}
+
+.project-card h3 {
+    margin-bottom: 15px;
+}
+
+.project-card p {
+    margin-bottom: 20px;
+}
+
+.project-card a {
+    display: inline-block;
+    padding: 10px 20px;
+    background: var(--primary);
+    border-radius: 5px;
+}
+
+
+/* =====================================
+   12. CONTACT PAGE
+===================================== */
+
+.contact-form-section {
+    max-width: 750px;
+    margin: auto;
+}
+
+.contact-form-section form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.contact-form-section label {
+    color: var(--accent);
+}
+
+.contact-form-section input,
+.contact-form-section textarea {
+    width: 100%;
+    padding: 15px;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    color: white;
+    outline: none;
+}
+
+.contact-form-section input:focus,
+.contact-form-section textarea:focus {
+    border-color: var(--accent);
+}
+
+.contact-form-section textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.contact-form-section button {
+    padding: 14px;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.contact-form-section button:hover {
+    background: #0284c7;
+}
+
+.contact-information {
+    text-align: center;
+    background: var(--secondary-bg);
+}
+
+.contact-details {
+    margin-top: 25px;
+}
+
+.contact-details p {
+    margin: 10px 0;
+}
+
+.contact-details a,
+.social-links a {
+    color: var(--accent);
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 25px;
+}
+
+
+/* =====================================
+   13. FOOTER
+===================================== */
+
+footer {
+    background: #050914;
+    padding: 60px 10%;
+    text-align: center;
+    border-top: 1px solid var(--border);
+}
+
+footer h2 {
+    color: var(--accent);
+    margin-bottom: 10px;
+}
+
+footer p {
+    color: var(--text);
+    margin: 8px 0;
+}
+
+footer a {
+    transition: 0.3s;
+}
+
+footer a:hover {
+    color: var(--accent);
+}
+
+
+/* =====================================
+   14. ANIMATIONS
+===================================== */
+
+@keyframes fadeIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+.hero-content,
+.page-header,
+.project-card,
+.service-category {
+    animation: fadeIn 0.8s ease;
+}
+
+
+/* =====================================
+   15. RESPONSIVE DESIGN
+===================================== */
+
+@media (max-width: 1000px) {
+
+    .nav-links {
+        gap: 12px;
+    }
+
+    .nav-links a {
+        font-size: 12px;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    .values-grid,
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 750px) {
+
+    header {
+        padding: 15px 6%;
+    }
+
+    .navbar {
+        flex-wrap: wrap;
+    }
+
+    .nav-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        padding: 25px 0;
+        background: var(--secondary-bg);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 60px 6%;
+    }
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .hero-image img {
+        width: 280px;
+        height: 320px;
+    }
+
+    .mission-vision,
+    .about-profile,
+    .matech-about,
+    .project-list {
+        grid-template-columns: 1fr;
+    }
+
+    .values-grid,
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .page-header {
+        padding: 70px 6%;
+    }
+
+    .page-header h1 {
+        font-size: 34px;
+    }
+
+    section:not(.hero):not(.page-header) {
+        padding: 60px 6%;
+    }
+
+    .skill-category,
+    .service-category {
+        margin: 20px 6%;
+    }
+
+    footer {
+        padding: 45px 6%;
+    }
+
+}
+
+.footer {
+    background: #050b18;
+    padding: 50px 10% 20px;
+    color: white;
+    border-top: 1px solid #1e3a5f;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.footer-brand h2 {
+    color: #38bdf8;
+    margin-bottom: 10px;
+}
+
+.footer-brand p {
+    color: #cbd5e1;
+}
+
+.footer-links h3 {
+    margin-bottom: 15px;
+    color: #38bdf8;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: #cbd5e1;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer-links a:hover {
+    color: #38bdf8;
+    padding-left: 5px;
+}
+
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid #1e3a5f;
+    margin-top: 35px;
+    padding-top: 20px;
+    color: #94a3b8;
+    font-size: 14px;
+}
+
+@media (max-width: 750px) {
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* SCROLL REVEAL ANIMATION */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(35px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ACTIVE NAVIGATION LINK */
+
+.nav-links a.active {
+    color: #38bdf8;
+}
+
+/* CONTACT FORM FEEDBACK */
+
+#form-message {
+    color: #38bdf8;
+    margin-top: 15px;
+    line-height: 1.6;
+}
+
+/* ACCESSIBILITY */
+
+@media (prefers-reduced-motion: reduce) {
+    .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}
+
+
+/* =====================================
+   MOBILE BURGER MENU
+===================================== */
+
+.menu-toggle {
+    display: none;
+    width: 44px;
+    height: 40px;
+    padding: 8px;
+    border: 1px solid rgba(255,255,255,0.35);
+    border-radius: 6px;
+    background: transparent;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 23px;
+    height: 2px;
+    border-radius: 2px;
+    background: #ffffff;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.menu-toggle[aria-expanded="true"] span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.menu-toggle[aria-expanded="true"] span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle[aria-expanded="true"] span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+@media (max-width: 750px) {
+    .navbar {
+        position: relative;
+        flex-wrap: wrap;
+    }
+
+    .menu-toggle {
+        display: flex;
+        margin-left: auto;
+    }
+
+    .nav-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        margin-top: 15px;
+        padding: 8px 0;
+        background: var(--secondary-bg);
+        border: 1px solid var(--border);
+        border-radius: 8px;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 11px 16px;
+        font-size: 15px;
+    }
+}
